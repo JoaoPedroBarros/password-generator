@@ -1,11 +1,17 @@
-# Generates passwrod
+def title(phrase):
+    print('=-' * 20)
+    print(f"{phrase:^40}")
+    print('=-' * 20)
+
+
+# Generates password
 def generate_password(size=12):
     from random import randint
 
     password = ''
     for c in range(size):
         password += chr(randint(32, 125))
-    print(password)
+    title(password)
 
 
 while True:
@@ -19,8 +25,7 @@ while True:
     if action == 1:
         generate_password()
     elif action == 2:
-        print('=-' * 20)
-        print(f"{'Working in progress':^40}")
-        print('=-' * 20)
+        title('Working in progress')
     else:
-        break`
+        title('Goodbye!')
+        break
